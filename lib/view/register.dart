@@ -2,12 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class Novasala extends StatefulWidget {
+class NovaSala extends StatefulWidget {
   @override
   _NovaSalaState createState() => _NovaSalaState();
 }
 
-class _NovaSalaState extends State<Novasala> {
+class _NovaSalaState extends State<NovaSala> {
   final _formKey = GlobalKey<FormState>();
   final _nomeDaSala = TextEditingController();
 
