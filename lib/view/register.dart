@@ -75,7 +75,7 @@ class _NovaSalaState extends State<Novasala> {
                   color: Colors.purple[50],
                 ),
                 margin: EdgeInsets.all(20),
-                width: 26git0,
+                width: 260,
                 height: 50,
                 child: Center(
                   child: Text(
