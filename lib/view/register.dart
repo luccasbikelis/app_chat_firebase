@@ -27,6 +27,7 @@ class _NovaSalaState extends State<NovaSala> {
         ),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             margin: EdgeInsets.only(top: 40),
@@ -58,6 +59,25 @@ class _NovaSalaState extends State<NovaSala> {
                 ],
               ),
             ),
+          ),
+          Column(
+            children: [
+              Container(child: Image.asset('assets/logo.png')),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Container(
+                      child: Text(
+                        'Lovepeople',
+                        style: TextStyle(fontSize: 25, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       ),
