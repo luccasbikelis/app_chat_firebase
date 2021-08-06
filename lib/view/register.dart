@@ -55,6 +55,20 @@ class _NovaSalaState extends State<NovaSala> {
                       fillColor: Colors.purple[50],
                     ),
                   ),
+                  Column(
+                    children: [
+                      Center(
+                        child: Image.asset('assets/logo.png'),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(40),
+                    child: Text(
+                      'Lovepeople',
+                      style: TextStyle(fontSize: 25),
+                    ),
+                  )
                 ],
               ),
             ),
