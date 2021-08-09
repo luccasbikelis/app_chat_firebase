@@ -1,3 +1,5 @@
+
+import 'package:app_chat_firebase/view/home.dart';
 import 'package:app_chat_firebase/view/login.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,6 +13,7 @@ void main() async {
   final FirebaseApp app = await Firebase.initializeApp();
   runApp(MyApp());
 }
+
 
 class MyApp extends StatefulWidget {
   @override
