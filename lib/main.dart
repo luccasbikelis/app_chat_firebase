@@ -14,13 +14,13 @@ void main() async {
   runApp(MyApp());
 }
 
-
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  final database = FirebaseDatabase.instance.reference();
   FirebaseAnalytics analytics = FirebaseAnalytics();
 
   @override
