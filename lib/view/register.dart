@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class NovaSala extends StatefulWidget {
@@ -8,8 +8,19 @@ class NovaSala extends StatefulWidget {
 }
 
 class _NovaSalaState extends State<NovaSala> {
+  final database = FirebaseDatabase.instance.reference();
   final _formKey = GlobalKey<FormState>();
   final _nomeDaSala = TextEditingController();
+
+  void nomeDaSala() async {
+    final _nomeDaSala = database.child('Nome Da Sala');
+    setState(() {
+      _nomeDaSala;
+    });
+    await _nomeDaSala.push().set({'valor': _nomeDaSala}).catchError(
+      (error) => print(error),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
