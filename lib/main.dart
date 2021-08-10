@@ -1,4 +1,4 @@
-
+import 'package:app_chat_firebase/page/home_page.dart';
 import 'package:app_chat_firebase/view/home.dart';
 import 'package:app_chat_firebase/view/login.dart';
 import 'package:app_chat_firebase/view/register.dart';
@@ -9,34 +9,30 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_analytics/observer.dart';
 
-
-
-void main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final FirebaseApp app = await Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  static final String title = 'Google SignIn';
+
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  final database = FirebaseDatabase.instance.reference();
   FirebaseAnalytics analytics = FirebaseAnalytics();
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      navigatorObservers: [
-        FirebaseAnalyticsObserver(analytics: analytics),
-      ],
-      home: Login(),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: MyApp.title,
+        theme: ThemeData(primarySwatch: Colors.pink),
+        navigatorObservers: [
+          FirebaseAnalyticsObserver(analytics: analytics),
+        ],
+        home: HomePage(),
+      );
 }

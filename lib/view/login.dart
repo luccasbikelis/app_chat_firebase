@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:app_chat_firebase/provider/google_sign_in.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -60,7 +62,12 @@ class Login extends StatelessWidget {
                       width: 200,
                       height: 50,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          final provider = Provider.of<GoogleSignInProvider>(
+                              context,
+                              listen: false);
+                          provider.login();
+                        },
                         child: Text(
                           "Login com Google",
                           style: TextStyle(
@@ -69,10 +76,8 @@ class Login extends StatelessWidget {
                               fontFamily: "Montserrat-SemiBold"),
                         ),
                         style: ButtonStyle(
-
                             backgroundColor:
                                 MaterialStateProperty.all(Color(0xFF3101B9)),
-                                
                             shape: MaterialStateProperty.all(StadiumBorder(
                                 side: BorderSide(
                                     color: Color(0xFF3101B9), width: 1)))),

@@ -9,7 +9,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,7 +99,6 @@ class _HomeState extends State<Home> {
           color: Colors.blue[900],
           iconSize: 40,
           onPressed: () {},
-
         ),
       ),
     );
