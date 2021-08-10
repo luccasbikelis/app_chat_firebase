@@ -9,6 +9,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,8 +100,35 @@ class _HomeState extends State<Home> {
           color: Colors.blue[900],
           iconSize: 40,
           onPressed: () {},
+
         ),
       ),
     );
   }
+}
+
+_buildSearch() {
+  return Container(
+    margin: EdgeInsets.only(left: 15, right: 15),
+    decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(10.0))),
+    child: TextField(
+      decoration: InputDecoration(
+        hintText: 'Search someone',
+        border: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white, width: 0.0),
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+        suffixIcon: Icon(
+          Icons.search,
+          color: Color(0xFF3101B9),
+        ),
+        labelStyle: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF3101B9),
+            fontFamily: "Tahoma"),
+      ),
+    ),
+  );
 }
