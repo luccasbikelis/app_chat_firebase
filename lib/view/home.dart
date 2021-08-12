@@ -9,128 +9,96 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFA901F7),
-      body: Form(
-        key: _formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(
-                top: 50,
-                left: 16,
-              ),
-              child: Text(
-                "Messages",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            _buildSearch(),
-            Container(
-              margin: EdgeInsets.all(16),
-              height: 24,
-              width: 80,
-              child: Text(
-                "Recents",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            Stack(
-              children: [
-                Container(
-                  margin: EdgeInsets.all(16),
-                  height: 102,
-                  width: 439,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFA901F7),
-                  ),
-                  padding: EdgeInsets.only(
-                    top: 211,
-                    left: 16,
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Center(
-                child: Container(
-                    height: 532,
-                    width: 382,
-                    padding: EdgeInsets.only(top: 351),
+      backgroundColor: Color(0xFFAA00FF),
+      body: Stack(children: [
+        SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 8, bottom: 10),
+                    width: 70,
+                    height: 70,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(
-                        left: Radius.circular(6),
-                        right: Radius.circular(6),
+                      color: Colors.white,
+                      borderRadius:
+                          BorderRadius.only(bottomRight: Radius.circular(100)),
+                    ),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        child: Icon(
+                          Icons.person,
+                          size: 35,
+                          color: Colors.blue[800],
+                        ),
                       ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 60,
+                  ),
+                  Text(
+                    'Raphael, Olá',
+                    style: TextStyle(
+                      fontFamily: "Montserrat-SemiBold",
+                      fontSize: 20,
                       color: Colors.white,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        InkWell(
+                  ),
+                  SizedBox(
+                    width: 81,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(left: 19, bottom: 10),
+                    width: 70,
+                    height: 70,
+                    alignment: Alignment.topLeft,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius:
+                          BorderRadius.only(bottomLeft: Radius.circular(100)),
+                    ),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        child: InkWell(
+                          onTap: () {},
                           child: Icon(
-                            Icons.home,
+                            Icons.exit_to_app,
                             size: 35,
-                            color: Colors.grey,
+                            color: Colors.blue[800],
                           ),
-                          onTap: () {},
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        InkWell(
-                          child: Icon(
-                            Icons.message,
-                            color: Colors.pink,
-                            size: 30.0,
-                            semanticLabel:
-                                'Text to announce in accessibility modes',
-                          ),
-                          onTap: () {},
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        InkWell(
-                          child: Icon(
-                            Icons.call,
-                            color: Colors.green,
-                            size: 30.0,
-                          ),
-                          onTap: () {},
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        InkWell(
-                          child: Icon(
-                            Icons.person,
-                            color: Colors.blue,
-                            size: 30.0,
-                          ),
-                          onTap: () {},
-                        ),
-                      ],
-                    )),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
+              SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
+        ),
+      ]),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        onPressed: () {},
+        child: IconButton(
+          icon: const Icon(Icons.add_rounded),
+          color: Colors.blue[900],
+          iconSize: 40,
+          onPressed: () {},
         ),
       ),
     );
