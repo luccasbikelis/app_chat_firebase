@@ -13,7 +13,7 @@ class _NovaSalaState extends State<NovaSala> {
   final _nomeDaSala = TextEditingController();
 
   void nomeDaSala() async {
-    final _nomeDaSala = database.child('Nome Da Sala');
+    final _nomeDaSala = database.child('Criar');
     setState(() {
       _nomeDaSala;
     });
