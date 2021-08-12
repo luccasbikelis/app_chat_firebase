@@ -78,7 +78,12 @@ class _HomeState extends State<Home> {
                         width: 40,
                         height: 40,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            final provider = Provider.of<GoogleSignInProvider>(
+                                context,
+                                listen: false);
+                            provider.logout();
+                          },
                           child: Icon(
                             Icons.exit_to_app,
                             size: 35,
@@ -99,11 +104,7 @@ class _HomeState extends State<Home> {
       ]),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
-        onPressed: () {
-          final provider =
-              Provider.of<GoogleSignInProvider>(context, listen: false);
-          provider.logout();
-        },
+        onPressed: () {},
         child: IconButton(
           icon: const Icon(Icons.add_rounded),
           color: Colors.blue[900],
