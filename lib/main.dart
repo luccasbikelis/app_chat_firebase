@@ -1,3 +1,4 @@
+import 'package:app_chat_firebase/view/chat/chat_page.dart';
 import 'package:app_chat_firebase/view/home.dart';
 import 'package:app_chat_firebase/view/login.dart';
 import 'package:app_chat_firebase/view/page/home_page.dart';
@@ -9,10 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
-<<<<<<< HEAD
-
-=======
->>>>>>> 719c6ee1bdc75e49a1192ecf3d6660eb1f9af39f
 import 'controller/google_sign_in.dart';
 
 Future main() async {
