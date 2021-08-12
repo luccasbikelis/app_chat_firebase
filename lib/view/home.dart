@@ -1,5 +1,8 @@
+import 'package:app_chat_firebase/controller/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,6 +14,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+
     return Scaffold(
       backgroundColor: Color(0xFFAA00FF),
       body: Stack(children: [
@@ -46,7 +51,8 @@ class _HomeState extends State<Home> {
                     width: 60,
                   ),
                   Text(
-                    'Raphael, Olá',
+                    'Name',
+                    // 'Name' + user.displayName,
                     style: TextStyle(
                       fontFamily: "Montserrat-SemiBold",
                       fontSize: 20,
@@ -93,7 +99,11 @@ class _HomeState extends State<Home> {
       ]),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+          final provider =
+              Provider.of<GoogleSignInProvider>(context, listen: false);
+          provider.logout();
+        },
         child: IconButton(
           icon: const Icon(Icons.add_rounded),
           color: Colors.blue[900],

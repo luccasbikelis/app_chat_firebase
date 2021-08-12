@@ -1,6 +1,6 @@
+import 'package:app_chat_firebase/controller/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:app_chat_firebase/provider/google_sign_in.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);

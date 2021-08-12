@@ -1,4 +1,4 @@
-import 'package:app_chat_firebase/provider/google_sign_in.dart';
+import 'package:app_chat_firebase/controller/google_sign_in.dart';
 import 'package:app_chat_firebase/view/home.dart';
 import 'package:app_chat_firebase/view/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
