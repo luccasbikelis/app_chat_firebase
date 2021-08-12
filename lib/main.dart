@@ -6,11 +6,13 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 import 'package:firebase_analytics/observer.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 719c6ee1bdc75e49a1192ecf3d6660eb1f9af39f
 import 'controller/google_sign_in.dart';
 
 Future main() async {
